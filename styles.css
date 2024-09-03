@@ -1,0 +1,212 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dashboard {
+    width: 90%;
+    max-width: 1100px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: slideDown 1s ease-in-out;
+}
+
+.header {
+    background-color: #3b5998;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.days-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.day-card {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.day-card h2 {
+    margin-bottom: 15px;
+    color: #3b5998;
+}
+
+.day-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.day-card ul li {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.day-card:hover {
+    transform: translateY(-10px);
+    background-color: #3b5998;
+    color: white;
+}
+
+.day-card:hover h2 {
+    color: white;
+}
+
+.day-card:hover ul li {
+    color: white;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .days-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .day-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .dashboard {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 15px;
+    }
+
+    .day-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .day-card h2 {
+        font-size: 18px;
+    }
+
+    .day-card ul li {
+        font-size: 12px;
+    }
+
+    .days-container {
+        padding: 10px;
+        gap: 10px;
+    }
+}
+.contact-box {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+.contact-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input, .input-box textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    outline: none;
+    resize: none;
+}
+
+.input-box textarea {
+    height: 100px;
+}
+
+.input-box label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label,
+.input-box textarea:focus ~ label,
+.input-box textarea:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #3b5998;
+    font-size: 14px;
+}
+
+button {
+    background-color: #3b5998;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2a4373;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .contact-box {
+        padding: 30px;
+    }
+
+    .contact-box h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
